@@ -9,7 +9,7 @@ RSpec.describe Doctor do
     end
 
     it "has attributes" do
-      expect(meredith.name).to eq("Meredith Gray")
+      expect(meredith.name).to eq("Meredith Grey")
       expect(meredith.specialty).to eq("General Surgery")
       expect(meredith.education).to eq("Harvard University")
       expect(meredith.salary).to eq(100000)

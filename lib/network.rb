@@ -28,13 +28,24 @@ class Network
     hash
   end
 
-  # def specialties
-  #   docs = @hospitals.flat_map do |hospital|
-  #     hospital.doctors
-  #   end
-  #
-  #   docs.map do |doc|
-  #     doc.specialties
-  #   end
-  # end
+  def doctors_by_specialty
+    by_specialites = Hash.new { |h, k| h[k] = [] }
+
+    @hospitals.select do |hospital|
+      hospital.doctors.select do |doctor|
+        by_specialites[doctor.specialty] << doctor.name
+      end
+    end
+    by_specialites
+  end
+
+  def average_doctors_salary
+    network_salary = @hospitals.sum { |hospital| hospital.total_salary }
+
+    total_doctors = @hospitals.sum do |hospital|
+      hospital.doctors.count
+    end
+
+    network_salary.to_f / total_doctors
+  end
 end

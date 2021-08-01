@@ -38,5 +38,18 @@ RSpec.describe Network do
       }
       expect(gsmn.doctors_by_hospital).to eq(result)
     end
+
+    it "returns a hash of specialties and the doctors in that specialty" do
+      result = {
+        "General Surgery" => ["Meredith Grey", "Miranda Bailey"],
+        "Pediatric Surgery" => ["Alex Karev"],
+        "Neurosurgery" => ["Derek Sheperd"]
+      }
+      expect(gsmn.doctors_by_specialty).to eq(result)
+    end
+
+    it "calculates the average doctors salary" do
+      expect(gsmn.average_doctors_salary).to eq(116250.00)
+    end
   end
 end

@@ -25,6 +25,10 @@ RSpec.describe Hospital do
       expect(seattle_grace.lowest_paid_doctor).to eq("Alex Karev")
     end
 
+    it "returns the highest paid doctor" do
+      expect(seattle_grace.highest_paid_doctor).to eq(meredith)
+    end
+    
     it "returns an array of specialties" do
       expect(seattle_grace.specialties).to eq(["General Surgery", "Pediatric Surgery"])
     end

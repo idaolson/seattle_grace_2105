@@ -31,7 +31,7 @@ RSpec.describe Network do
       expect(gsmn.highest_paid_doctor).to eq(miranda)
     end
 
-    it "returns an array of doctors' names by hospital" do
+    it "returns a hash of doctors' names by hospital" do
       result = {
         seattle_grace => ["Meredith Grey", "Alex Karev"],
         grey_sloan => ["Miranda Bailey", "Derek Sheperd"]

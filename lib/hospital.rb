@@ -19,6 +19,12 @@ class Hospital
     end.name
   end
 
+  def highest_paid_doctor
+    @doctors.max_by do |doctor|
+      doctor.salary
+    end
+  end
+
   def specialties
     specialties = doctors.map do |doctor|
       doctor.specialty
